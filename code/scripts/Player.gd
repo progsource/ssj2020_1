@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 
+enum State {IDLE, RUNNING, JUMPING}
+
+
 export(int) var run_speed = 200
 export(int) var jump_speed = -400
 export(int) var gravity = 1200
@@ -9,13 +12,14 @@ export(float, 0, 1, 0.1) var acceleration = 0.5
 
 var is_paused : bool = false
 var velocity = Vector2()
-var jumping = false
 var direction : float = 0.0
+var current_state = State.IDLE
 
 
 func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("virus", "set_player", self)
+	$AnimationPlayer.play("PlayerIdle")
 
 
 func _input(_event):
@@ -27,7 +31,7 @@ func _input(_event):
 	var jump = Input.is_action_just_pressed('ui_select')
 	
 	if jump and is_on_floor():
-		jumping = true
+		current_state = State.JUMPING
 		velocity.y = jump_speed
 	
 	if is_on_floor():
@@ -45,13 +49,29 @@ func _physics_process(delta):
 		return
 
 	velocity.y += gravity * delta
-	
-	if jumping and is_on_floor():
-		jumping = false
-	
+
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	if current_state == State.JUMPING and is_on_floor():
+		current_state = State.IDLE
+	elif is_on_floor() and velocity.x == 0:
+		current_state = State.IDLE
+	elif velocity.x > 0 or velocity.x < 0:
+		current_state = State.RUNNING
+
+
+func _process(_delta):
+	_play_animation()
 
 
 func _on_update_game_state(var is_game_paused : bool):
 	is_paused = is_game_paused
 	
+
+func _play_animation():
+	$Sprite.flip_h = direction < 0
+	
+	if current_state == State.IDLE:
+		$AnimationPlayer.play("PlayerIdle")
+	elif current_state == State.RUNNING:
+		$AnimationPlayer.play("PlayerRun")
