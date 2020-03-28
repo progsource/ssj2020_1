@@ -64,3 +64,4 @@ position = Vector2( 282.42, 118.37 )
 
 [node name="Granny" parent="." instance=ExtResource( 10 )]
 position = Vector2( 738, 133 )
+next_level_file_path = "res://scenes/Game.tscn"
