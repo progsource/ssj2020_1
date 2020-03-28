@@ -6,6 +6,7 @@ func _ready():
 	EventBus.connect("item_picked_up", self, "_on_item_picked_up")
 	# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_body_entered")
+	$AnimationPlayer.play()
 
 func _on_item_picked_up(sender_id) -> void:
 	if get_instance_id() == sender_id:
