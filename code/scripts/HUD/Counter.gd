@@ -5,6 +5,7 @@ onready var counter = $Label
 var count = 0
 
 func _ready():
+	# warning-ignore:return_value_discarded
 	EventBus.connect("item_picked_up", self, "_on_item_picked_up")
 
 func _on_item_picked_up(_sender_id):
