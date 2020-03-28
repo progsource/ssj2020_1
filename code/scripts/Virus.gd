@@ -52,4 +52,4 @@ func _check_infection_range() -> void:
 
 func set_player(p) -> void:
 	player = p
-	speed = p.speed + 0.5
+	speed = p.run_speed + 0.5
