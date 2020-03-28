@@ -11,7 +11,7 @@ class Obstacle:
 
 
 const block_size : float = 160.0
-const view_offset : float = 320.0
+const view_offset : float = 100.0
 const light_texture = preload("res://assets/gfx/background/ceiling_light.png")
 const shelf_texture = preload("res://assets/gfx/background/shelfs_crumbled.png")
 const veggies_texture = preload("res://assets/gfx/background/shelfs_veggies.png")
@@ -48,7 +48,7 @@ func _process(_delta):
 
 
 func _on_player_moved(var pos_x : float) -> void :
-	player_position_x = pos_x - view_offset
+	player_position_x = pos_x + view_offset
 
 
 func _is_obstacle_visible(var block_position : float) -> bool :
