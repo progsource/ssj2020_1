@@ -5,6 +5,7 @@ onready var animation_player := $AnimationPlayer
 export(float, 0.5, 1.0, 0.1) var delay = 0.5
 
 func _ready() -> void:
+	# warning-ignore:return_value_discarded
 	EventBus.connect("objective_completed", self, "_on_objective_completed")
 
 func _on_objective_completed(_sender_id, path) -> void:

@@ -7,7 +7,7 @@
 radius = 24.0
 height = 64.0
 
-[node name="Granny" type="KinematicBody2D"]
+[node name="Granny" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
