@@ -7,10 +7,11 @@ enum ObstacleType { EMPTY, LIGHT, SHELF, VEGGIES, COUNT }
 class Obstacle:
 	var type : int
 	var position_x : float
+	var veggy : int = 0
 
 
-const block_size : float = 320.0
-const view_offset : float = 180.0
+const block_size : float = 160.0
+const view_offset : float = 320.0
 const light_texture = preload("res://assets/gfx/background/ceiling_light.png")
 const shelf_texture = preload("res://assets/gfx/background/shelfs_crumbled.png")
 const veggies_texture = preload("res://assets/gfx/background/shelfs_veggies.png")
@@ -61,6 +62,8 @@ func _create_obstacle(var pos_x : float, var type : int) -> void :
 	if type == ObstacleType.EMPTY:
 		return
 
+	var veggy = rng.randi_range(0, 3)
+
 	var obstacle = obstacle_scene.instance()
 	obstacle.position.x = pos_x * block_size + view_offset
 	obstacle.position.y = obstacle_definitions[type]
@@ -70,10 +73,13 @@ func _create_obstacle(var pos_x : float, var type : int) -> void :
 		obstacle.texture = shelf_texture
 	elif type == ObstacleType.VEGGIES:
 		obstacle.texture = veggies_texture
+		obstacle.region_enabled = true
+		obstacle.region_rect = Rect2(veggy * 60, 0, 60, 70)
 	
 	var vo = Obstacle.new()
 	vo.position_x = pos_x
 	vo.type = type
+	vo.veggy = veggy
 	visible_object.push_back(vo)
 	
 	obstacles[pos_x] = type
