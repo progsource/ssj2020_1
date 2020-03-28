@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 144, 0, 48, 48 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "PlayerJump"
 loop = true
 tracks/0/type = "value"
@@ -39,11 +39,10 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 96, 48, 48 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "PlayerRun"
-length = 0.9
+[sub_resource type="Animation" id=4]
+length = 0.8
 loop = true
-step = 0.01
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -51,7 +50,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.3, 0.5, 0.7 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 144, 48, 48, 48 ) ]
@@ -63,7 +62,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 144, 48, 48, 48 )
+region_rect = Rect2( 48, 48, 48, 48 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 2 )
@@ -72,5 +71,5 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "PlayerIdle"
 anims/PlayerIdle = SubResource( 2 )
-anims/PlayerJump = SubResource( 4 )
-anims/PlayerRun = SubResource( 3 )
+anims/PlayerJump = SubResource( 3 )
+anims/PlayerRun = SubResource( 4 )
