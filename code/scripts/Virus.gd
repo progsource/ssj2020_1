@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(int, 32, 64, 1) var infection_cast_to_y : int = 32
 export(int, 72, 144, 1) var chase_cast_to_y : int = 72
-export(float, 3, 15.0, 0.1) var chase_boost : float = 5.0
+export(float, 0.5, 15.0, 0.1) var chase_boost : float = 5.0
 
 onready var infection_range = [$InfectionRange1, $InfectionRange2]
 onready var chase_range = [$ChaseRange1, $ChaseRange2]
@@ -26,6 +26,10 @@ func _ready() -> void:
 
 func _on_objective_completed(_sender_id, _path) -> void:
 	_disable_range()
+	_disable_collision()
+
+func _disable_collision() -> void:
+	pass
 
 func _disable_range() -> void:
 	for infection in infection_range:
@@ -45,14 +49,15 @@ func _check_chase_range(delta) -> void:
 		if ray.is_colliding():
 			var coll = ray.get_collider()
 			if coll.name == player.name:
-				_move(delta)
+				# warning-ignore:return_value_discarded
+				_chase(delta)
 
-func _move(delta) -> void:
+func _chase(delta) -> KinematicCollision2D:
 	var vec_to_player = player.global_position - global_position
 	vec_to_player = vec_to_player.normalized()
 	global_rotation = atan2(vec_to_player.y, vec_to_player.x)
 	# warning-ignore:return_value_discarded
-	move_and_collide(vec_to_player * speed * delta)
+	return move_and_collide(vec_to_player * speed * delta)
 
 func _check_infection_range() -> void:
 	for ray in infection_range:
