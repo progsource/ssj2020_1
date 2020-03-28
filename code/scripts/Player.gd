@@ -29,3 +29,8 @@ func _physics_process(delta):
 	
 	if collision:
 		print("collided")
+
+
+func _on_update_game_state(var is_game_paused : bool):
+	is_paused = is_game_paused
+	
