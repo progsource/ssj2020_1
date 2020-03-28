@@ -9,10 +9,15 @@
 [node name="Background" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 0 )
+motion_mirroring = Vector2( 320, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 161, 70 )
+position = Vector2( -180, 0 )
 texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 140 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 
@@ -29,7 +34,11 @@ position = Vector2( 278, 104 )
 texture = ExtResource( 2 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 320, 0 )
 
 [node name="ground" type="Sprite" parent="ParallaxLayer3"]
-position = Vector2( 161, 150 )
+position = Vector2( -180, 220 )
 texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 60 )

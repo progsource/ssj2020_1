@@ -25,3 +25,7 @@ func _resizePlatform():
 	])
 	
 	$CollisionPolygon2D.polygon = points
+
+
+func _on_player_moved(var pos_x : float) -> void :
+	position.x = pos_x

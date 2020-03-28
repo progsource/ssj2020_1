@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 
+signal player_moved(pos_x)
+
+
 enum State {IDLE, RUNNING, JUMPING}
 
 
@@ -51,6 +54,8 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+	emit_signal("player_moved", position.x)
 	
 	if current_state == State.JUMPING and is_on_floor():
 		current_state = State.IDLE
