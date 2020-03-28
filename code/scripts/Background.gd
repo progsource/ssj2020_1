@@ -76,4 +76,6 @@ func _create_obstacle(var pos_x : float, var type : int) -> void :
 	vo.type = type
 	visible_object.push_back(vo)
 	
+	obstacles[pos_x] = type
+	
 	$ObstacleParallaxLayer.add_child(obstacle)
