@@ -17,11 +17,12 @@ func _ready():
 func _resizePlatform():
 	$NinePatchRect.rect_size = size
 	var pos = $NinePatchRect.rect_position
+	var offset : float = 110
 	var points = PoolVector2Array([
-		Vector2(pos.x, pos.y + size.y),
-		pos,
-		Vector2(pos.x + size.x, pos.y),
-		Vector2(pos.x + size.x, pos.y + size.y),
+		Vector2(pos.x - offset, pos.y + size.y),
+		Vector2(pos.x - offset, pos.y),
+		Vector2(pos.x + size.x - offset, pos.y),
+		Vector2(pos.x + size.x - offset, pos.y + size.y),
 	])
 	
 	$CollisionPolygon2D.polygon = points
