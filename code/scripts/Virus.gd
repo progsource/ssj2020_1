@@ -1,4 +1,3 @@
-# virus.gd
 extends KinematicBody2D
 
 signal infected
