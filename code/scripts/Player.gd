@@ -1,34 +1,46 @@
 extends KinematicBody2D
 
 
-export(float, 10, 300, 0.01) var speed : float = 40.0
-
+export(int) var run_speed = 100
+export(int) var jump_speed = -400
+export(int) var gravity = 1200
 
 var is_paused : bool = false
-var direction : float = 0.0
+var velocity = Vector2()
+var jumping = false
 
 
 func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("virus", "set_player", self)
 
+
 func _input(_event):
 	if is_paused:
 		return
 	
-	direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var direction : float = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	velocity.x = direction * run_speed
+	
+	var jump = Input.is_action_just_pressed('ui_select')
+	
+	if jump and is_on_floor():
+		jumping = true
+		velocity.y = jump_speed
 
 
 func _physics_process(delta):
 	if is_paused:
 		return
 
-	var force_x : float = direction * speed * delta
-	var force = Vector2(force_x, 0)
-	var collision = move_and_collide(force)
+	#velocity.x *= delta
+	velocity.y += gravity * delta
 	
-	if collision:
-		print("collided")
+	if jumping and is_on_floor():
+		jumping = false
+	
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+
 
 func _on_update_game_state(var is_game_paused : bool):
 	is_paused = is_game_paused
