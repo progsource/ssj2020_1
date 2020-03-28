@@ -19,7 +19,7 @@ const obstacle_scene = preload("res://packed/BackgroundObstacle.tscn")
 const obstacle_definitions = {
 	ObstacleType.LIGHT : 96.0,
 	ObstacleType.SHELF : 160.0,
-	ObstacleType.VEGGIES : 152.0,
+	ObstacleType.VEGGIES : 160.0,
 }
 
 

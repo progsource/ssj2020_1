@@ -22,7 +22,7 @@ region_rect = Rect2( 0, 0, 640, 140 )
 motion_mirroring = Vector2( 320, 0 )
 
 [node name="ground" type="Sprite" parent="GroundParallaxLayer"]
-position = Vector2( -180, 220 )
+position = Vector2( -170, 210 )
 texture = ExtResource( 4 )
 centered = false
 region_enabled = true
