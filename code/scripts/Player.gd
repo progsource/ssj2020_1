@@ -9,8 +9,8 @@ var direction : float = 0.0
 
 
 func _ready():
-	pass
-
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("virus", "set_player", self)
 
 func _input(_event):
 	if is_paused:
@@ -29,7 +29,6 @@ func _physics_process(delta):
 	
 	if collision:
 		print("collided")
-
 
 func _on_update_game_state(var is_game_paused : bool):
 	is_paused = is_game_paused

@@ -17,13 +17,15 @@ shape = SubResource( 1 )
 [node name="Body" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 30
-frame = 8
+frame = 9
 
 [node name="InfectionRayRight" type="RayCast2D" parent="."]
 rotation = -1.5708
+enabled = true
 
 [node name="InfectionRayLeft" type="RayCast2D" parent="."]
 rotation = 1.5708
+enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = ExtResource( 2 )

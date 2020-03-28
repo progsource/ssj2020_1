@@ -13,4 +13,4 @@ position = Vector2( 20, 160 )
 position = Vector2( 16, 124 )
 
 [node name="Virus" parent="." instance=ExtResource( 3 )]
-position = Vector2( 73.677, 125.276 )
+position = Vector2( 150, 128 )

@@ -20,7 +20,6 @@ func _physics_process(_delta):
 		if ray.is_colliding():
 			var coll = ray.get_collider()
 			if coll.name == player.name:
-				print("infected")
 				emit_signal("infected")
 
 func set_player(p):
