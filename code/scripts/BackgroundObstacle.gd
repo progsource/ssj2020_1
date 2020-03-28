@@ -3,8 +3,9 @@ extends Sprite
 
 func _ready():
 	# warning-ignore:return_value_discarded
-	$VisibilityNotifier2D.connect("viewport_exited", self, "_on_screen_exit")
+	$VisibilityNotifier2D.connect("camera_exited", self, "_on_screen_exit")
 
 
-func _on_screen_exit():
-	queue_free()
+func _on_screen_exit(var cam : Camera) -> void :
+	if cam.current:
+		queue_free()
