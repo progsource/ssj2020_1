@@ -75,3 +75,5 @@ func _play_animation():
 		$AnimationPlayer.play("PlayerIdle")
 	elif current_state == State.RUNNING:
 		$AnimationPlayer.play("PlayerRun")
+	elif current_state == State.JUMPING:
+		$AnimationPlayer.play("PlayerJump")
