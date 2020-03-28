@@ -11,11 +11,9 @@ func _ready():
 	$Player.connect("player_moved", $Background, "_on_player_moved")
 
 
-
 func _process(_delta):
 	pass
 
 
 func _on_start_button_pressed():
 	print("start the game")
-

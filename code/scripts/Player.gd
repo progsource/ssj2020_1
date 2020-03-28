@@ -23,6 +23,8 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("virus", "set_player", self)
 	$AnimationPlayer.play("PlayerIdle")
+	# warning-ignore:return_value_discarded
+	EventBus.connect("item_picked_up", self, "_on_item_pickup")
 
 
 func _input(_event):
@@ -36,6 +38,7 @@ func _input(_event):
 	if jump and is_on_floor():
 		current_state = State.JUMPING
 		velocity.y = jump_speed
+		$JumpSound.play()
 	
 	if is_on_floor():
 		direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -59,6 +62,7 @@ func _physics_process(delta):
 	
 	if current_state == State.JUMPING and is_on_floor():
 		current_state = State.IDLE
+		$LandSound.play()
 	elif is_on_floor() and velocity.x == 0:
 		current_state = State.IDLE
 	elif velocity.x > 0 or velocity.x < 0:
@@ -82,3 +86,7 @@ func _play_animation():
 		$AnimationPlayer.play("PlayerRun")
 	elif current_state == State.JUMPING:
 		$AnimationPlayer.play("PlayerJump")
+
+
+func _on_item_pickup(var instance_id):
+	$CollectItemSound.play()
