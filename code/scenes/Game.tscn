@@ -56,6 +56,12 @@ position = Vector2( 220.454, 77.854 )
 [node name="Toiletpaper4" parent="Items" instance=ExtResource( 4 )]
 position = Vector2( 282.42, 118.37 )
 
+[node name="Toiletpaper5" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 400, 118.37 )
+
+[node name="Toiletpaper6" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 600, 100 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 6 )]
