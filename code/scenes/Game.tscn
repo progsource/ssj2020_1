@@ -41,6 +41,7 @@ box_size = 3
 
 [node name="Box2" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 110, 140 )
+box_size = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 light_mask = 2

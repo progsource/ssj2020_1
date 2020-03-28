@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/gfx/virus/covid@32x32.png" type="Texture" id=1]
+[ext_resource path="res://assets/gfx/virus/virus_small.png" type="Texture" id=1]
 [ext_resource path="res://packed/virus/Idle.anim" type="Animation" id=2]
-[ext_resource path="res://packed/virus/Move.anim" type="Animation" id=3]
 [ext_resource path="res://scripts/Virus.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 14.0
 
 [node name="Virus" type="KinematicBody2D"]
 script = ExtResource( 4 )
@@ -16,8 +14,8 @@ shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-hframes = 30
-frame = 9
+hframes = 2
+frame = 1
 
 [node name="InfectionRange1" type="RayCast2D" parent="."]
 rotation = -1.5708
@@ -39,4 +37,3 @@ cast_to = Vector2( 0, 150 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = ExtResource( 2 )
-anims/Move = ExtResource( 3 )

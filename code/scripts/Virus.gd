@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(int, 32, 64, 1) var infection_cast_to_y : int = 32
 export(int, 72, 144, 1) var chase_cast_to_y : int = 72
-export(float, 0.5, 15.0, 0.1) var chase_boost : float = 5.0
+export(float, 0.25, 1.1, 0.1) var chase_boost : float = 0.25
 
 onready var infection_range = [$InfectionRange1, $InfectionRange2]
 onready var chase_range = [$ChaseRange1, $ChaseRange2]
@@ -14,7 +14,7 @@ var speed : float = 0.0
 
 func _ready() -> void:
 	add_to_group("virus")
-	animation_player.play("Move")
+	animation_player.play("Idle")
 
 	# warning-ignore:return_value_discarded
 	EventBus.connect("objective_completed", self, "_on_objective_completed")
@@ -49,14 +49,15 @@ func _check_chase_range(delta) -> void:
 		if ray.is_colliding():
 			var coll = ray.get_collider()
 			if coll.name == player.name:
-				# warning-ignore:return_value_discarded
-				_chase(delta)
+				var coll2 = _chase(delta)
+				if coll2 && coll2.name == player.name:
+					EventBus.emit_signal("infected", get_instance_id())
+					queue_free()
 
 func _chase(delta) -> KinematicCollision2D:
 	var vec_to_player = player.global_position - global_position
 	vec_to_player = vec_to_player.normalized()
 	global_rotation = atan2(vec_to_player.y, vec_to_player.x)
-	# warning-ignore:return_value_discarded
 	return move_and_collide(vec_to_player * speed * delta)
 
 func _check_infection_range() -> void:
@@ -65,7 +66,8 @@ func _check_infection_range() -> void:
 			var coll = ray.get_collider()
 			if coll.name == player.name:
 				EventBus.emit_signal("infected", get_instance_id())
+				queue_free()
 
 func set_player(p) -> void:
 	player = p
-	speed = p.run_speed + chase_boost
+	speed = p.run_speed * chase_boost

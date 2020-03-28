@@ -25,6 +25,8 @@ func _ready():
 	$AnimationPlayer.play("PlayerIdle")
 	# warning-ignore:return_value_discarded
 	EventBus.connect("item_picked_up", self, "_on_item_pickup")
+	# warning-ignore:return_value_discarded
+	EventBus.connect("objective_completed", self, "_on_objective_completed")
 
 
 func _input(_event):
@@ -90,3 +92,7 @@ func _play_animation():
 
 func _on_item_pickup(var _instance_id):
 	$CollectItemSound.play()
+
+func _on_objective_completed(_sender_id, _path) -> void:
+	current_state = State.IDLE
+	is_paused = true
