@@ -88,5 +88,5 @@ func _play_animation():
 		$AnimationPlayer.play("PlayerJump")
 
 
-func _on_item_pickup(var instance_id):
+func _on_item_pickup(var _instance_id):
 	$CollectItemSound.play()
