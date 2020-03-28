@@ -64,6 +64,7 @@ func _physics_process(delta):
 	
 	if current_state == State.JUMPING and is_on_floor():
 		current_state = State.IDLE
+		direction = 0
 		$LandSound.play()
 	elif is_on_floor() and velocity.x == 0:
 		current_state = State.IDLE
