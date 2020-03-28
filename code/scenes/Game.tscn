@@ -7,7 +7,15 @@
 [node name="Game" type="Node2D"]
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 20, 160 )
+position = Vector2( 0, 188 )
+
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 256, 188 )
+size = Vector2( 64, 32 )
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 188 )
+size = Vector2( 64, 32 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 16, 124 )
