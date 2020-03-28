@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-signal infected
-
 export(int, 32, 64, 1) var infection_cast_to_y : int = 32
 export(int, 72, 144, 1) var chase_cast_to_y : int = 72
 export(float, 3, 15.0, 0.1) var chase_boost : float = 5.0
@@ -49,7 +47,7 @@ func _check_infection_range() -> void:
 		if ray.is_colliding():
 			var coll = ray.get_collider()
 			if coll.name == player.name:
-				emit_signal("infected")
+				EventBus.emit_signal("infected", get_instance_id())
 
 func set_player(p) -> void:
 	player = p
