@@ -16,10 +16,22 @@ func _ready() -> void:
 	add_to_group("virus")
 	animation_player.play("Move")
 
+	# warning-ignore:return_value_discarded
+	EventBus.connect("objective_completed", self, "_on_objective_completed")
+
 	for infection in infection_range:
 		infection.set_cast_to(Vector2(0, infection_cast_to_y))
 	for chase in chase_range:
 		chase.set_cast_to(Vector2(0, chase_cast_to_y))
+
+func _on_objective_completed(_sender_id, _path) -> void:
+	_disable_range()
+
+func _disable_range() -> void:
+	for infection in infection_range:
+		infection.set_enabled(false)
+	for chase in chase_range:
+		chase.set_enabled(false)
 
 func _physics_process(delta) -> void:
 	if player == null:
