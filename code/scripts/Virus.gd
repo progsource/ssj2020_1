@@ -4,6 +4,7 @@ signal infected
 
 export(int, 32, 64, 1) var infection_cast_to_y : int = 32
 export(int, 72, 144, 1) var chase_cast_to_y : int = 72
+export(float, 3, 15.0, 0.1) var chase_boost : float = 5.0
 
 onready var infection_range = [$InfectionRange1, $InfectionRange2]
 onready var chase_range = [$ChaseRange1, $ChaseRange2]
@@ -52,4 +53,4 @@ func _check_infection_range() -> void:
 
 func set_player(p) -> void:
 	player = p
-	speed = p.run_speed + 0.5
+	speed = p.run_speed + chase_boost
