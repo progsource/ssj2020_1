@@ -28,10 +28,10 @@ size = Vector2( 320, 32 )
 [node name="Virus2" type="Node" parent="."]
 
 [node name="Virus" parent="Virus2" instance=ExtResource( 3 )]
-position = Vector2( 340, 128 )
+position = Vector2( 441.924, 96.0329 )
 
 [node name="MagneticVirus" parent="Virus2" instance=ExtResource( 9 )]
-position = Vector2( 128, 50 )
+position = Vector2( 221.122, -12.5443 )
 
 [node name="boxes" type="Node" parent="."]
 
