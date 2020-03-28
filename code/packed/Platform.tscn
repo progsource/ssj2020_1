@@ -9,8 +9,8 @@ script = ExtResource( 2 )
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -40.0
-margin_right = 40.0
+margin_top = -32.0
+margin_right = 128.0
 texture = ExtResource( 1 )
 patch_margin_left = 1
 patch_margin_top = 1
@@ -21,4 +21,4 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 0, -32, 128, -32, 128, 0 )

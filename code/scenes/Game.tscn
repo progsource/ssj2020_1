@@ -8,15 +8,14 @@
 [node name="Game" type="Node2D"]
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 188 )
-size = Vector2( 128, 32 )
+position = Vector2( 0, 180 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 256, 188 )
+position = Vector2( 256, 180 )
 size = Vector2( 64, 32 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160, 188 )
+position = Vector2( 160, 180 )
 size = Vector2( 64, 32 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
