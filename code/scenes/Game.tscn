@@ -144,7 +144,7 @@ position = Vector2( 1950, 110 )
 [node name="SceneLoader" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="EndGame" type="Node2D" parent="."]
-position = Vector2( 7000, 0 )
+position = Vector2( 7000, 20 )
 
 [node name="Granny" parent="EndGame" instance=ExtResource( 10 )]
 position = Vector2( 739, 130 )
