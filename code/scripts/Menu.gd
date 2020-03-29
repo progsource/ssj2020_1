@@ -1,12 +1,12 @@
 extends Control
 
 export(String, FILE) var next_level_file_path := ""
-export(bool) var display_note = false
+export(String, MULTILINE) var text = ""
 
 onready var note = $Margin/Box/Note
 
 func _ready():
-	note.set_visible(display_note)
+	note.set_text(text)
 
 func _on_Start_pressed():
 	print("start")

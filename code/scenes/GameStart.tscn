@@ -3,11 +3,10 @@
 [ext_resource path="res://packed/Menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://packed/SceneLoader.tscn" type="PackedScene" id=2]
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="GameStart" type="CanvasLayer"]
 
 [node name="SceneLoader" parent="." instance=ExtResource( 2 )]
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
-text = "Oh no!
-You got infected ...
-Try to be more careful next time"
+text = "
+"

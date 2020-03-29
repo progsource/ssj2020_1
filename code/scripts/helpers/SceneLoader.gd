@@ -9,6 +9,9 @@ func _ready() -> void:
 	EventBus.connect("objective_completed", self, "_on_objective_completed")
 
 func _on_objective_completed(_sender_id, path) -> void:
+	if get_tree().get_current_scene().has_node("Menu"):
+		var menu = get_tree().get_current_scene().get_node("Menu")
+		menu.set_visible(false)
 	yield(get_tree().create_timer(delay), "timeout")
 	animation_player.play("fade")
 	yield(animation_player, "animation_finished")
