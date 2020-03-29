@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
 
-enum ObstacleType { EMPTY, LIGHT, SHELF, VEGGIES, COUNT }
+enum ObstacleType { EMPTY, LIGHT, SHELF, VEGGIES, GLASS, COUNT }
 
 
 class Obstacle:
@@ -15,12 +15,14 @@ const view_offset : float = 100.0
 const light_texture = preload("res://assets/gfx/background/ceiling_light.png")
 const shelf_texture = preload("res://assets/gfx/background/shelfs_crumbled.png")
 const veggies_texture = preload("res://assets/gfx/background/shelfs_veggies.png")
+const glassshelf_texture = preload("res://assets/gfx/background/shelfs_glasses.png")
 const obstacle_scene = preload("res://packed/BackgroundObstacle.tscn")
 # y positions
 const obstacle_definitions = {
 	ObstacleType.LIGHT : 96.0,
 	ObstacleType.SHELF : 160.0,
 	ObstacleType.VEGGIES : 160.0,
+	ObstacleType.GLASS : 160.0,
 }
 
 
@@ -75,6 +77,8 @@ func _create_obstacle(var pos_x : float, var type : int) -> void :
 		obstacle.texture = veggies_texture
 		obstacle.region_enabled = true
 		obstacle.region_rect = Rect2(veggy * 60, 0, 60, 70)
+	elif type == ObstacleType.GLASS:
+		obstacle.texture = glassshelf_texture
 	
 	var vo = Obstacle.new()
 	vo.position_x = pos_x
