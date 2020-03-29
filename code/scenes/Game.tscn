@@ -42,6 +42,16 @@ position = Vector2( 2800, 164 )
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
+[node name="Sprite3" type="Sprite" parent="deko"]
+position = Vector2( 4100, 164 )
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Sprite4" type="Sprite" parent="deko"]
+position = Vector2( 6200, 164 )
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
 [node name="Virus2" type="Node" parent="."]
 
 [node name="Virus" parent="Virus2" instance=ExtResource( 3 )]
@@ -62,8 +72,26 @@ position = Vector2( 700, -150 )
 [node name="MagneticVirus3" parent="Virus2" instance=ExtResource( 9 )]
 position = Vector2( 3000, -150 )
 
+[node name="MagneticVirus5" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 4000, -150 )
+
+[node name="MagneticVirus6" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 4060, -150 )
+
 [node name="MagneticVirus4" parent="Virus2" instance=ExtResource( 9 )]
 position = Vector2( 5000, -150 )
+
+[node name="MagneticVirus7" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 6000, -150 )
+
+[node name="MagneticVirus8" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 7000, -150 )
+
+[node name="MagneticVirus9" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 8000, -150 )
+
+[node name="MagneticVirus10" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 7600, -150 )
 
 [node name="boxes" type="Node" parent="."]
 
@@ -77,8 +105,19 @@ position = Vector2( 110, 140 )
 [node name="Box8" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 2000, 140 )
 
+[node name="Box11" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 4000, 150 )
+
 [node name="Box3" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 700, 120 )
+box_size = 1
+
+[node name="Box9" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 2900, 130 )
+box_size = 1
+
+[node name="Box13" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 6000, 130 )
 box_size = 1
 
 [node name="Box4" parent="boxes" instance=ExtResource( 11 )]
@@ -89,12 +128,24 @@ box_size = 3
 position = Vector2( 1500, 110 )
 box_size = 3
 
+[node name="Box12" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 4080, 120 )
+box_size = 3
+
 [node name="Box5" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 1000, 130 )
 box_size = 2
 
 [node name="Box6" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 1400, 130 )
+box_size = 2
+
+[node name="Box10" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 3400, 130 )
+box_size = 2
+
+[node name="Box14" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 6400, 130 )
 box_size = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -136,6 +187,36 @@ position = Vector2( 1450, 150 )
 
 [node name="Toiletpaper9" parent="Items" instance=ExtResource( 4 )]
 position = Vector2( 1950, 110 )
+
+[node name="Toiletpaper10" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 2200, 130 )
+
+[node name="Toiletpaper11" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 2300, 150 )
+
+[node name="Toiletpaper12" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 2350, 110 )
+
+[node name="Toiletpaper13" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 3300, 110 )
+
+[node name="Toiletpaper14" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 4160, 170 )
+
+[node name="Toiletpaper15" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 5000, 120 )
+
+[node name="Toiletpaper16" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 4900, 110 )
+
+[node name="Toiletpaper17" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 6000, 110 )
+
+[node name="Toiletpaper18" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 6060, 90 )
+
+[node name="Toiletpaper19" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 6460, 70 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
