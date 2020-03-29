@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://packed/Menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://packed/SceneLoader.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/gfx/hud/gui_game_won.png" type="Texture" id=3]
+[ext_resource path="res://assets/audio/Virus_in_the_house.ogg" type="AudioStream" id=4]
 
 [node name="GameWon" type="CanvasLayer"]
 
@@ -12,3 +13,7 @@
 text = "Thank you for helping Grandma
 Stay Safe!"
 logo = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

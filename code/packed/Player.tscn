@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/audio/jump.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/audio/collect_toilet_paper.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/audio/land_on_ground.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/audio/music_try_1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/Fly_through_the_sky.ogg" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 19 )

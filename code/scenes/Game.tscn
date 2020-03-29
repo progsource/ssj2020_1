@@ -46,6 +46,18 @@ box_size = 3
 [node name="Box2" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 110, 140 )
 
+[node name="Box3" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 700, 120 )
+box_size = 1
+
+[node name="Box4" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 760, 110 )
+box_size = 3
+
+[node name="Box5" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 1000, 110 )
+box_size = 2
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 light_mask = 2
 position = Vector2( 16, 124 )
@@ -77,16 +89,22 @@ position = Vector2( 400, 118.37 )
 [node name="Toiletpaper6" parent="Items" instance=ExtResource( 4 )]
 position = Vector2( 600, 100 )
 
+[node name="Toiletpaper7" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 800, 60 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="SceneLoader" parent="CanvasLayer" instance=ExtResource( 8 )]
 
-[node name="Granny" parent="." instance=ExtResource( 10 )]
-position = Vector2( 738, 133 )
+[node name="EndGame" type="Node2D" parent="."]
+position = Vector2( 1000, 0 )
+
+[node name="Granny" parent="EndGame" instance=ExtResource( 10 )]
+position = Vector2( 739, 130 )
 next_level_file_path = "res://scenes/GameWon.tscn"
 
-[node name="cashier" type="Sprite" parent="."]
+[node name="cashier" type="Sprite" parent="EndGame"]
 position = Vector2( 610, 113 )
 texture = ExtResource( 12 )
