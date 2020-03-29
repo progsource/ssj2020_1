@@ -61,6 +61,7 @@ margin_bottom = 164.0
 [node name="Start" type="Button" parent="Margin/Box/Buttons"]
 margin_right = 316.0
 margin_bottom = 20.0
+action_mode = 0
 text = "Start"
 
 [node name="Quit" type="Button" parent="Margin/Box/Buttons"]
