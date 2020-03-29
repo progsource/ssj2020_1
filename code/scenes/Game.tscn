@@ -71,7 +71,7 @@ position = Vector2( 221.122, -12.5443 )
 position = Vector2( 700, -150 )
 
 [node name="MagneticVirus3" parent="Virus2" instance=ExtResource( 9 )]
-position = Vector2( 3000, -180 )
+position = Vector2( 3000, -220 )
 
 [node name="MagneticVirus5" parent="Virus2" instance=ExtResource( 9 )]
 position = Vector2( 4000, -150 )
@@ -96,6 +96,10 @@ position = Vector2( 7600, -150 )
 
 [node name="BigVirus" parent="Virus2" instance=ExtResource( 14 )]
 position = Vector2( 5500, -190 )
+
+[node name="BigVirus2" parent="Virus2" instance=ExtResource( 14 )]
+position = Vector2( 8200, -300 )
+scale = Vector2( 0.938124, 0.938124 )
 
 [node name="boxes" type="Node" parent="."]
 
@@ -221,6 +225,15 @@ position = Vector2( 6060, 90 )
 
 [node name="Toiletpaper19" parent="Items" instance=ExtResource( 4 )]
 position = Vector2( 6460, 70 )
+
+[node name="Toiletpaper20" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 7000, 160 )
+
+[node name="Toiletpaper21" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 7050, 164 )
+
+[node name="Toiletpaper22" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 7100, 110 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
