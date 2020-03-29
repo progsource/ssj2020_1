@@ -13,6 +13,9 @@ export(int) var gravity = 1200
 export(float, 0, 1, 0.01) var friction = 0.01
 export(float, 0, 1, 0.1) var acceleration = 0.5
 
+const girl_texture = preload("res://assets/gfx/player/player_girl.png")
+const boy_texture = preload("res://assets/gfx/player/player_guy.png")
+
 var is_paused : bool = false
 var velocity = Vector2()
 var direction : float = 0.0
@@ -22,6 +25,12 @@ var current_state = State.IDLE
 func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("virus", "set_player", self)
+	
+	if GlobalData.selected_character == GlobalData.CharacterSelection.GIRL:
+		$Sprite.texture = girl_texture
+	else:
+		$Sprite.texture = boy_texture
+	
 	$AnimationPlayer.play("PlayerIdle")
 	# warning-ignore:return_value_discarded
 	EventBus.connect("item_picked_up", self, "_on_item_pickup")

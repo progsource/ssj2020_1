@@ -15,7 +15,25 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ssj2020_1"
+config/name="Shopping with Virus"
+config/description="You want to help the nice old lady from the neighborhood. She needs toilet paper from the store. But oh no - Corona is trying to kill you, so jump, collect toilet paper and deliver it to the old lady without getting infected.
+
+
+This is our entry for the #1 Stay Safe! Jam.
+
+Controls:
+
+Keyboard: Left & Right Arrows or A & D to run, Space for jump
+
+Credits:
+https://www.staysafejam.org/ for their logo
+@pietze art and audio
+@teemitzitrone code
+@progsource code and audio
+
+GitHub: https://github.com/progsource/ssj2020_1
+
+"
 run/main_scene="res://scenes/GameStart.tscn"
 boot_splash/image="res://assets/gfx/ssj_twitch_boxart.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
@@ -24,6 +42,7 @@ config/icon="res://icon.png"
 [autoload]
 
 EventBus="*res://scripts/helpers/EventBus.gd"
+GlobalData="*res://scripts/helpers/GlobalData.gd"
 
 [display]
 
