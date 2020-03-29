@@ -19,10 +19,10 @@ const glassshelf_texture = preload("res://assets/gfx/background/shelfs_glasses.p
 const obstacle_scene = preload("res://packed/BackgroundObstacle.tscn")
 # y positions
 const obstacle_definitions = {
-	ObstacleType.LIGHT : 96.0,
-	ObstacleType.SHELF : 160.0,
-	ObstacleType.VEGGIES : 160.0,
-	ObstacleType.GLASS : 160.0,
+	ObstacleType.LIGHT : 86.0,
+	ObstacleType.SHELF : 164.0,
+	ObstacleType.VEGGIES : 170.0,
+	ObstacleType.GLASS : 174.0,
 }
 
 

@@ -29,4 +29,4 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 640, 60 )
 
 [node name="ObstacleParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 0.9, 1 )
+motion_scale = Vector2( 0.96, 1 )

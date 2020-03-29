@@ -27,8 +27,8 @@ transform = Transform2D( 1, 0, 0, 1, 0, -90 )
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource( 2 )]
-position = Vector2( 0, 180 )
-size = Vector2( 320, 32 )
+position = Vector2( 0, 196 )
+size = Vector2( 320, 16 )
 
 [node name="deko" type="Node" parent="."]
 
@@ -37,16 +37,33 @@ position = Vector2( 900, 164 )
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
+[node name="Sprite2" type="Sprite" parent="deko"]
+position = Vector2( 2800, 164 )
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
 [node name="Virus2" type="Node" parent="."]
 
 [node name="Virus" parent="Virus2" instance=ExtResource( 3 )]
 position = Vector2( 441.924, 96.0329 )
+
+[node name="Virus2" parent="Virus2" instance=ExtResource( 3 )]
+position = Vector2( 1200, 96.033 )
+
+[node name="Virus3" parent="Virus2" instance=ExtResource( 3 )]
+position = Vector2( 1850, 96.033 )
 
 [node name="MagneticVirus" parent="Virus2" instance=ExtResource( 9 )]
 position = Vector2( 221.122, -12.5443 )
 
 [node name="MagneticVirus2" parent="Virus2" instance=ExtResource( 9 )]
 position = Vector2( 700, -150 )
+
+[node name="MagneticVirus3" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 3000, -150 )
+
+[node name="MagneticVirus4" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 5000, -150 )
 
 [node name="boxes" type="Node" parent="."]
 
@@ -57,6 +74,9 @@ box_size = 3
 [node name="Box2" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 110, 140 )
 
+[node name="Box8" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 2000, 140 )
+
 [node name="Box3" parent="boxes" instance=ExtResource( 11 )]
 position = Vector2( 700, 120 )
 box_size = 1
@@ -65,8 +85,16 @@ box_size = 1
 position = Vector2( 760, 110 )
 box_size = 3
 
+[node name="Box7" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 1500, 110 )
+box_size = 3
+
 [node name="Box5" parent="boxes" instance=ExtResource( 11 )]
-position = Vector2( 1000, 110 )
+position = Vector2( 1000, 130 )
+box_size = 2
+
+[node name="Box6" parent="boxes" instance=ExtResource( 11 )]
+position = Vector2( 1400, 130 )
 box_size = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -103,6 +131,12 @@ position = Vector2( 600, 100 )
 [node name="Toiletpaper7" parent="Items" instance=ExtResource( 4 )]
 position = Vector2( 800, 60 )
 
+[node name="Toiletpaper8" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 1450, 150 )
+
+[node name="Toiletpaper9" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 1950, 110 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 6 )]
@@ -110,7 +144,7 @@ position = Vector2( 800, 60 )
 [node name="SceneLoader" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="EndGame" type="Node2D" parent="."]
-position = Vector2( 2000, 0 )
+position = Vector2( 7000, 0 )
 
 [node name="Granny" parent="EndGame" instance=ExtResource( 10 )]
 position = Vector2( 739, 130 )
