@@ -37,6 +37,9 @@ position = Vector2( 441.924, 96.0329 )
 [node name="MagneticVirus" parent="Virus2" instance=ExtResource( 9 )]
 position = Vector2( 221.122, -12.5443 )
 
+[node name="MagneticVirus2" parent="Virus2" instance=ExtResource( 9 )]
+position = Vector2( 700, -150 )
+
 [node name="boxes" type="Node" parent="."]
 
 [node name="Box" parent="boxes" instance=ExtResource( 11 )]
