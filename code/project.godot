@@ -34,7 +34,7 @@ https://www.staysafejam.org/ for their logo
 GitHub: https://github.com/progsource/ssj2020_1
 
 "
-run/main_scene="res://scenes/GameStart.tscn"
+run/main_scene="res://scenes/LoadingScene.tscn"
 boot_splash/image="res://assets/gfx/ssj_twitch_boxart.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
